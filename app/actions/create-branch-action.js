@@ -37,7 +37,7 @@ const CreateBranchAction = () => {
       error,
       stdout,
       stderr,
-    } = await exec(`git checkout -b ${branch}`)
+    } = await exec(`git switch -c ${branch}`)
     return `${stdout} ${stderr} ${error}`
   }
 

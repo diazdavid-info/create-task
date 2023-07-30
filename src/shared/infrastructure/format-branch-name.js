@@ -1,11 +1,14 @@
 const clearName = (name) => name?.trim()
-  .replace(/\[.*\]\s/, '')
+  .normalize('NFD')
+  .replace(/\[.*]\s/, '')
   .replace(/\+\s/, '')
   .replace(/-\s/, '')
   .replace(/\./, '')
   .replace(/\s/g, '-')
   .replace(/:/g, '')
   .replace(/"/g, '')
+  .replace(/&/g, '')
+  .replace(/[\u0300-\u036f]/g, '')
   .toLowerCase()
 
 const epicBranchName = async ({ key, summary }) => {
