@@ -12,8 +12,6 @@ const firstAnswers = {
   message: 'What do you want to do?',
   choices: [
     'Create branch',
-    'List Task In Progress',
-    'Review',
   ],
 }
 
